@@ -1,0 +1,709 @@
+/* Font imports - must be at the top */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* All styles scoped to booking form wrapper to prevent WordPress conflicts */
+.booking-form-wrapper {
+  all: initial; /* resets all inherited properties */
+}
+
+body {
+  margin: 0 !important;
+}
+:root {
+  --primary-color: #2E495C !important;
+  --darker-primary-color: #355A71 !important;
+}
+
+/* Apply fonts */
+.booking-form-wrapper {
+  font-family: 'DM Sans', sans-serif !important;
+}
+
+.booking-form-wrapper .header-text {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.booking-form-wrapper .field-header {
+  font-family: 'DM Sans', sans-serif !important;
+}
+
+/* Custom DatePicker Styles */
+.booking-form-wrapper .react-datepicker {
+  font-family: inherit !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.react-datepicker__header {
+  background-color: white !important;
+  border-bottom: 1px solid #e5e7eb !important;
+  padding-top: 8px !important;
+}
+
+.react-datepicker__current-month {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #2E495C !important;
+  margin-bottom: 8px !important;
+}
+
+.react-datepicker__day-names {
+  display: flex !important;
+  justify-content: space-around !important;
+  margin-bottom: 4px !important;
+}
+
+.react-datepicker__day-name {
+  color: #2E495C !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  width: 32px !important;
+  line-height: 32px !important;
+  text-transform: uppercase !important;
+  font-family: "Inter", sans-serif !important;
+}
+
+.react-datepicker__month {
+  margin: 4px !important;
+}
+
+.react-datepicker__week {
+  display: flex !important;
+  justify-content: space-around !important;
+}
+
+.react-datepicker__day {
+  color: #2E495C !important; /* Dark text instead of light green */
+  font-size: 12px !important;
+  width: 32px !important;
+  height: 32px !important;
+  line-height: 32px !important;
+  text-align: center !important;
+  margin: 3px !important;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.react-datepicker__day:hover {
+  background-color: #f3f4f6 !important;
+  border-radius: 50% !important;
+}
+
+.react-datepicker__day--selected:hover {
+  background-color: #063041 !important;
+}
+
+.react-datepicker__day--today {
+  font-weight: 600 !important;
+  color: #2563eb !important;
+}
+
+.react-datepicker__day--disabled {
+  color: #d1d5db !important;
+  cursor: not-allowed !important;
+}
+
+.react-datepicker__day--disabled:hover {
+  background-color: transparent !important;
+}
+
+.react-datepicker__day--outside-month {
+  color: #d1d5db !important;
+}
+
+.react-datepicker__navigation {
+  top: 8px !important;
+}
+
+.react-datepicker__navigation--previous {
+  left: 8px !important;
+}
+
+.react-datepicker__navigation--next {
+  right: 8px !important;
+}
+
+.react-datepicker__navigation-icon::before {
+  border-color: #6b7280 !important;
+  border-width: 2px 2px 0 0 !important;
+  height: 7px !important;
+  width: 7px !important;
+}
+
+/* Custom scrollbar for provider dropdown */
+.provider-dropdown::-webkit-scrollbar {
+  width: 6px !important;
+}
+
+.provider-dropdown::-webkit-scrollbar-track {
+  background: #f1f1f1 !important;
+  border-radius: 3px !important;
+}
+
+.provider-dropdown::-webkit-scrollbar-thumb {
+  background: #888 !important;
+  border-radius: 3px !important;
+}
+
+.provider-dropdown::-webkit-scrollbar-thumb:hover {
+  background: #555 !important;
+}
+
+/* Custom scrollbar for time slots */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px !important;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #f3f4f6 !important;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #d1d5db !important;
+  border-radius: 4px !important;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af !important;
+}
+
+/* ========== width changes start ======= */
+/* Make the inline calendar wider and centered */
+.custom-calendar {
+  width: 100% !important;
+  overflow: visible !important;
+}
+
+/* Expand the inner month grid */
+.custom-calendar .react-datepicker__month {
+  width: 100% !important;
+}
+
+/* Make day cells use more space */
+.custom-calendar .react-datepicker__week {
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+/* Center and balance days */
+.custom-calendar .react-datepicker__day {
+  text-align: center !important;
+  margin: 0 !important; /* remove extra gaps */
+}
+
+/* Optional: make header aligned with days */
+.custom-calendar .react-datepicker__day-names {
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+.react-datepicker__month-container {
+  float: none !important;
+}
+
+/* Mobile calendar fix - prevent cutoff */
+@media (max-width: 640px) {
+  .custom-calendar {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: visible !important;
+  }
+
+  .custom-calendar .react-datepicker {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .custom-calendar .react-datepicker__month-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+  }
+}
+/* ========== width changes end ======= */
+/* ========== phone input changes start ======= */
+.react-tel-input .country-list {
+  text-align: left !important;
+}
+/* ========== phone input changes end ======= */
+
+/* ---------------------- Circular Consent Checkbox ---------------------- */
+.circle-consent {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  box-sizing: border-box !important;
+  background: #fff !important;
+  border: 2px solid #2e495c !important;
+  width: 23.4px !important;
+  height: 22.4px !important;
+  min-width: 23.3px !important;
+  min-height: 22.4px !important;
+  border-radius: 50% !important;
+  display: inline-block !important;
+  transition: border 0.15s, box-shadow 0.15s, background 0.2s !important;
+  vertical-align: middle !important;
+  margin-right: 10.8px !important;
+  position: relative !important;
+  cursor: pointer !important;
+  top: 2px !important;
+}
+
+.circle-consent:checked {
+  background: #2E495C !important;
+  border-color: #2E495C !important;
+}
+
+.circle-consent:checked::after {
+  content: "" !important;
+  display: block !important;
+  width: 9px !important; /* 0.5em -> 9px (assuming 1em = 18px) */
+  height: 9px !important;
+  border-radius: 50% !important;
+  background: #fff !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.circle-consent:focus-visible {
+  outline: 2px solid #2e537d !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 3px rgba(8, 64, 92, 0.25) !important;
+}
+
+@media (max-width: 600px) {
+  .circle-consent {
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    min-height: 18px !important;
+  }
+
+  .circle-consent:checked::after {
+    width: 7.2px !important; /* 0.4em -> 7.2px */
+    height: 7.2px !important; /* 0.4em -> 7.2px */
+  }
+}
+
+.react-datepicker__day {
+  color: #2E495C !important; /* Dark text instead of light green */
+  font-size: 14px !important;
+  width: 32px !important; /* 2rem -> 32px */
+  height: 30px !important; /* 2rem -> 36px */
+  line-height: 32px !important;
+  text-align: center !important;
+  margin: 3px !important;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.react-datepicker__day:hover {
+  background-color: #f3f4f6 !important;
+  border-radius: 50% !important;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  border-radius: 50% !important;
+  font-weight: 600 !important;
+}
+
+.react-datepicker__day--selected:hover {
+  background-color: #063041 !important;
+}
+
+.react-datepicker__day--today {
+  font-weight: 600 !important;
+  color: #2563eb !important;
+}
+
+.react-datepicker__day--disabled {
+  color: #d1d5db !important;
+  cursor: not-allowed !important;
+}
+
+.react-datepicker__day--disabled:hover {
+  background-color: transparent !important;
+}
+
+.react-datepicker__day--outside-month {
+  color: #d1d5db !important;
+}
+
+.react-datepicker__navigation {
+  top: 8px !important;
+}
+
+.react-datepicker__navigation--previous {
+  left: 8px !important;
+}
+
+.react-datepicker__navigation--next {
+  right: 8px !important;
+}
+
+.react-datepicker__navigation-icon::before {
+  border-color: #6b7280 !important;
+  border-width: 2px 2px 0 0 !important;
+  height: 7px !important;
+  width: 7px !important;
+}
+
+/* Custom scrollbar for provider dropdown */
+.provider-dropdown::-webkit-scrollbar {
+  width: 6px !important;
+}
+
+.provider-dropdown::-webkit-scrollbar-track {
+  background: #f1f1f1 !important;
+  border-radius: 3px !important;
+}
+
+.provider-dropdown::-webkit-scrollbar-thumb {
+  background: #888 !important;
+  border-radius: 3px !important;
+}
+
+.provider-dropdown::-webkit-scrollbar-thumb:hover {
+  background: #555 !important;
+}
+
+/* Custom scrollbar for time slots */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px !important;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #f3f4f6 !important;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #d1d5db !important;
+  border-radius: 4px !important;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af !important;
+}
+
+/* ========== calendar changes start ======= */
+.react-datepicker__header {
+  border-bottom: none !important;
+  background-color: transparent !important;
+}
+
+/* Mobile calendar fix - prevent cutoff */
+@media (max-width: 640px) {
+  .custom-calendar {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: visible !important;
+  }
+
+  .custom-calendar .react-datepicker {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .custom-calendar .react-datepicker__month-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+  }
+}
+
+/* ========== calendar changes end ======= */
+
+/* Highlight days with availability (from dayClassName) */
+.available-day {
+  background-color: rgba(46, 73, 92, 0.08) !important; /* subtle darker tint */
+  color: #2E495C !important; /* Dark text for available dates */
+  font-weight: 600 !important;
+  border-radius: 50% !important;
+}
+.available-day:hover {
+  background-color: rgba(46, 73, 92, 0.16) !important;
+}
+
+/* Non-available days we mark as disabled via dayClassName */
+.rdp-day-disabled {
+  color: #cbd5e1 !important;
+  opacity: 0.6 !important;
+  pointer-events: none !important;
+}
+
+/* ========== phone input changes start ======= */
+.react-tel-input .country-list {
+  text-align: left !important;
+}
+/* ========== phone input changes end ======= */
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  border-radius: 50% !important;
+  font-weight: 700 !important;
+  font-size: 12px !important; /* bigger font for selected day */
+  box-shadow: 0 0 0 2px rgba(8, 64, 92, 0.25) !important;
+}
+/* Ensure available days that are selected still use the solid brand color */
+.available-day.react-datepicker__day--selected,
+.available-day.react-datepicker__day--keyboard-selected {
+  background-color: var(--primary-color) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 0 2px rgba(8, 64, 92, 0.25) !important;
+}
+.react-datepicker__day-name {
+  text-transform: capitalize !important;
+  font-size: 14px !important;
+  color: #2E495C !important;
+  font-weight: 500 !important;
+  font-family: "Inter", sans-serif !important;
+}
+.PhoneInputInput:focus {
+  border: none !important;
+  outline: none !important;
+}
+/* header css - already defined above with correct color */
+.headerSub-text {
+  margin: 0 !important;
+  font-size: 15px !important; /* Originally 0.9rem */
+  color: #999999 !important; /* text-gray-500 */
+  margin-top: 4px !important; /* mt-1 */
+  text-align: center !important; /* text-center */
+}
+/* error text */
+.my-error-text {
+  color: #ef4444 !important; /* Tailwind red-500 */
+  font-size: 12px !important; /* text-xs = 12px */
+  margin: 0 !important;
+  /* margin-top: 4px !important; */
+  text-align: left !important;
+}
+.text-font {
+  font-size: 16px !important;
+}
+
+@media (max-width: 640px) {
+  .headerSub-text {
+    font-size: 14px !important; /* text-xs */
+  }
+  .text-font {
+    font-size: 14px !important;
+  }
+  .header-text {
+    font-size: 20px !important; /* text-2xl */
+  }
+  /* Smaller weekday labels */
+  .react-datepicker__day-name {
+    font-size: 12px !important;
+    min-width: 26px !important;
+  }
+
+  /* Smaller day cells */
+  .react-datepicker__day {
+    font-size: 14px !important;
+    width: 28px !important;
+    height: 28px !important;
+    line-height: 28px !important;
+    margin: 1.8px !important;
+  }
+
+  /* Bigger selected day text (scaled down from desktop's increased value) */
+  .react-datepicker__day--selected,
+  .react-datepicker__day--keyboard-selected {
+    font-size: 14px !important;
+  }
+
+  /* Compact header spacing */
+  .react-datepicker__header {
+    padding: 4px !important;
+  }
+
+  .react-datepicker__current-month {
+    font-size: 14px !important;
+  }
+
+  /* Grid tightening */
+  .react-datepicker__week {
+    margin-bottom: 3px !important;
+  }
+
+  /* Custom calendar - small day min-width */
+  .custom-calendar .react-datepicker__day {
+    min-width: 28px !important;
+  }
+}
+
+.react-datepicker__header {
+  padding: 0 !important;
+}
+
+button {
+  cursor: pointer !important;
+}
+#booking-form {
+  font-family: "Inter", sans-serif !important;
+}
+
+@keyframes selectPulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--primary-color)33 !important; /* 20% opacity */
+  }
+  70% {
+    box-shadow: 0 0 8px 6px var(--primary-color)33 !important;
+  }
+  100% {
+    box-shadow: 0 0 0 0 var(--primary-color)33 !important;
+  }
+}
+.animate-selectPulse {
+  animation: selectPulse 0.4s !important;
+}
+.booking-form-wrapper input,
+.booking-form-wrapper textarea {
+  outline: none !important;
+}
+
+/* ================ Birthday calendar changes ================== */
+/* Hide default big date header */
+.react-datepicker__current-month {
+  display: none !important;
+}
+.font-inter {
+  font-family: "Inter", sans-serif !important;
+}
+.date-of-birth-calendar-popper .react-datepicker {
+  border: 1px solid #d1d6dc !important;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12) !important;
+  border-radius: 0px !important;
+}
+.field-header {
+  font-family: 'DM Sans', sans-serif !important;
+  text-transform: uppercase !important;
+  color: #2E495C !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.2px !important;
+}
+
+.header-text {
+  font-size: 24px !important;
+  color: #2E495C !important;
+  text-align: center !important;
+  margin: 0 !important;
+  font-weight: 500 !important;
+  font-family: "Inter", sans-serif !important;
+}
+
+/* ========== input changes start ======= */
+.text-color-input {
+  color: #808080 !important;
+}
+.placeholder-text-color {
+  color: #999999 !important;
+}
+/* ========== input changes end ======= */
+
+/* Hide native date input placeholder label on desktop screens (>= 640px) */
+@media (min-width: 640px) {
+  .PhoneInput {
+    padding-inline: 12px !important;
+    padding-block: 5px !important;
+  }
+  .date-of-birth-wrapper input[type="date"] + label {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+}
+
+/* Force phone input placeholder color to #999999 */
+.phone-input-wrapper .PhoneInputInput::placeholder,
+.phone-input-wrapper input::placeholder {
+  color: #2E495C !important;
+  opacity: 1 !important;
+}
+
+.phone-input-wrapper .PhoneInputInput::-webkit-input-placeholder {
+  color: #2E495C !important;
+  opacity: 1 !important;
+}
+
+.phone-input-wrapper .PhoneInputInput::-moz-placeholder {
+  color: #2E495C !important;
+  opacity: 1 !important;
+}
+
+.phone-input-wrapper .PhoneInputInput:-ms-input-placeholder {
+  color: #2E495C !important;
+  opacity: 1 !important;
+}
+
+/* autofill changes start ======= */
+/* Remove browser autofill color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  box-shadow: 0 0 0 1000px white inset !important;
+  -webkit-text-fill-color: #808080 !important; /* your normal text color */
+  transition: background-color 9999s ease-out 0s !important;
+}
+
+/* Firefox autofill */
+input:autofill {
+  background-color: white !important;
+  color: #808080 !important;
+}
+/* autofill changes end ======= */
+
+.PhoneInput {
+  width: 100% !important;
+  padding-inline: 12px !important;
+  padding-block: 7px !important;
+  border-radius: 5px !important; /* same as TextInput rounded-[5px] */
+  border: 1px solid #d1d6dc !important; /* default border */
+  background: white !important;
+  display: flex !important;
+  align-items: center !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.PhoneInputInput {
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+}
+
+.PhoneInput:focus-within {
+  border-color: #d1d6dc !important;
+  box-shadow: 0 0 0 1px #d1d6dc !important; /* same as focus:ring-1 in TextInput */
+}
+
+.PhoneInput.error {
+  border-color: #ef4444 !important;
+}
+
+/* Time slot header colors */
+.booking-form-wrapper .text-gray-500 {
+  color: #2E495C !important;
+}
+
+/* Calendar navigation button text color */
+.booking-form-wrapper button span {
+  color: #2E495C !important;
+}

@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --primary-color: #2563eb;
+  --secondary-color: #14b8a6;
+  --radius: 8px;
+  --color-placeholder: #999999;
+  --color-text: #808080;
+  --color-border: #d1d6dc;
+}
+
+/* Scope all Tailwind utilities to the booking form wrapper */
+.booking-form-wrapper {
+  isolation: isolate;
+  font-family: "Inter", sans-serif !important;
+}
+
+/* Reset box-sizing only within the wrapper to prevent leaks */
+.booking-form-wrapper *,
+.booking-form-wrapper *::before,
+.booking-form-wrapper *::after {
+  box-sizing: border-box;
+}
+
+.react-datepicker__day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.custom-calendar.calendar-locked .react-datepicker__month {
+  filter: blur(3px);
+  opacity: 0.45;
+  pointer-events: none;
+  transition: filter 0.2s ease, opacity 0.2s ease;
+}
+
+.custom-calendar.calendar-locked .react-datepicker__week,
+.custom-calendar.calendar-locked .react-datepicker__day {
+  pointer-events: none;
+}
